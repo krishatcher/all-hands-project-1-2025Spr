@@ -1,6 +1,8 @@
 import random # Import the 'random' module, which provides functions for generating random numbers and data
 import string # Import the 'string' module, which provides constants and functions for working with strings
 
+# Rosa Ruiz
+
 # Function to generate a random string of a given length
 def generate_random_string(length):
     # Create lowercase letters a - z, but if you want both used string.ascii_letters
