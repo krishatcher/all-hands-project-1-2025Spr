@@ -1,3 +1,6 @@
+"""This module provides fuctions to generate random strings and store them in diffrent
+containers such as list, sets, and dictionaries."""
+
 import random # Import the 'random' module, which provides functions for generating random numbers and data
 import string # Import the 'string' module, which provides constants and functions for working with strings
 
@@ -5,12 +8,13 @@ import string # Import the 'string' module, which provides constants and functio
 
 # Function to generate a random string of a given length
 def generate_random_string(length):
+    "Generate a random string of a given lenght."
     # Create lowercase letters a - z, but if you want both used string.ascii_letters
     letters = string.ascii_lowercase
     # Initialize an empty string to store the random string
     random_string = ""
     # loop length times to create a sting of a want it length
-    for i in range(length):
+    for _ in range(length):
         # add a random chosen letter from letters to random_string
         random_string += random.choice(letters)
     # return the create it random string
@@ -18,17 +22,19 @@ def generate_random_string(length):
 
 # Function to generate a list of random strings
 def generate_list_of_random_strings(num_strings, string_length):
+    "Generate a list of random string."
     # initialize an empty list to store the random strings
     random_list = []
-    # loop num_strings times to create the required number of random strings
+    # loop num_strings, the times need to create the required number of random strings
     for _ in range(num_strings):
-        # call the fuction to create random strings of the want it length and add it to the list
+        # call the fuction to create random strings of the desired length and add it to the list
         random_list.append(generate_random_string(string_length))
     # return the list of random strings
     return random_list
 
 # Function to generate a set of random strings (sets do not allow duplicates)
 def generate_set_of_random_strings(num_strings, string_length):
+    "Generate a set of random string."
     # Start an empty set to store the random strings
     random_set = set()
     # loop until the set contains the required numbers of unique random strings
@@ -40,9 +46,10 @@ def generate_set_of_random_strings(num_strings, string_length):
 
 # Function to generate a dictionary of random strings with indices as keys
 def generate_dict_of_random_strings(num_strings, string_length):
+    "Generate a dictionary of a random string."
     # start an empty dictionary to store the random stings
     random_dict = {}
-    # loop num_strings times to create the required numbers of random strings
+    # loop num_strings the times need to create the required numbers of random strings
     for i in range(num_strings):
         # create a random string of the want it length and add it to the dictionary
         # the key is the current index i, and the value is the created random string
@@ -56,7 +63,7 @@ if __name__ == "__main__":
     string_length = 5  # Length of each random string
 
     # Generate containers of random strings
-    # genarte a list of random strings
+    # generate a list of random strings
     random_list = generate_list_of_random_strings(num_strings, string_length)
     # generate a set of random strings
     random_set = generate_set_of_random_strings(num_strings, string_length)
