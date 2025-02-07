@@ -77,3 +77,11 @@ if __name__ == "__main__":
     print(f"Set of random strings: {list(random_set)[:1]}")
     # Convert the dictionary items to a list to allow slicing, but the original dictionary remains unchanged
     print(f"Dict of random strings: {list(random_dict.items())[:1]}")
+
+# I used three sources for my work. The first source is called Grammarly, which is an AI assistant
+# that helps me with my spelling and grammar errors. I typically use it in my comments. The second
+# source I used was to understand the module that I utilized to generate random strings, specifically `import string`.
+# The thrid source was copilot, I used to be able to genearte the type anotation I need in order to meet the class expectation.
+
+# [Gramally](https://app.grammarly.com)
+# [educative](https://www.educative.io/answers/what-is-asciilowercase-constant-in-python)
