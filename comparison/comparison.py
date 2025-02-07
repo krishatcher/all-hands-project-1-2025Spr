@@ -5,12 +5,12 @@ import time
 
 
 # Function to perform equality comparisons between a passed value and values in the container
-def compare_value_in_container(value, container): 
+def compare_value_in_container(value: any, container: (list | set | dict)) -> list:
     """
     Compare the passed value with each element in the container.
     """
     # Depending on the type of container, loop through and compare values
-    if isinstance(container, (list,set)):
+    if isinstance(container, (list, set)):
         # For lists and sets, compare directly to each element
         return [value == item for item in container]
 
@@ -23,7 +23,7 @@ def compare_value_in_container(value, container):
 
 
 # Function to benchmark the time taken for comparisons in containers
-def benchmark_comparison(value, container):
+def benchmark_comparison(value: any, container: (list | set | dict)) -> float:
     """
     Benchmark the time it takes to perform equality comparisons on the container.
     """
