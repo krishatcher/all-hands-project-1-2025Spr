@@ -38,5 +38,5 @@ def benchmark_comparison(value: str, container: (list | set | dict)) -> float:
 
 # https://stackoverflow.com/questions/48510512/python-comparing-value-to-an-element-of-list-of-lists
 # https://stackoverflow.com/questions/3860009/custom-comparison-for-built-in-containers
-# chatgpt
-# Copilot
+# chatgpt : I used it for the information about the comparison of a value against elements in a container and also the use of isinstance to check the type of container.
+# Copilot : I used it for debugging the code with fix with copilot.
