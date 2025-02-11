@@ -5,7 +5,7 @@ import time
 
 
 # Function to perform equality comparisons between a passed value and values in the container
-def compare_value_in_container(value: any, container: (list | set | dict)) -> list:
+def compare_value_in_container(value: str, container: (list | set | dict)) -> list:
     """
     Compare the passed value with each element in the container.
     """
@@ -23,7 +23,7 @@ def compare_value_in_container(value: any, container: (list | set | dict)) -> li
 
 
 # Function to benchmark the time taken for comparisons in containers
-def benchmark_comparison(value: any, container: (list | set | dict)) -> float:
+def benchmark_comparison(value: str, container: (list | set | dict)) -> float:
     """
     Benchmark the time it takes to perform equality comparisons on the container.
     """
@@ -34,3 +34,9 @@ def benchmark_comparison(value: any, container: (list | set | dict)) -> float:
 
     end_time = time.perf_counter()  # End the timer
     return end_time - start_time  # Return the duration taken for comparison
+
+
+# https://stackoverflow.com/questions/48510512/python-comparing-value-to-an-element-of-list-of-lists
+# https://stackoverflow.com/questions/3860009/custom-comparison-for-built-in-containers
+# chatgpt
+# Copilot
