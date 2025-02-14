@@ -1,5 +1,6 @@
 import timeit
 import typer
+from typing import Union
 from rich.console import Console
 from comparison import benchmark_comparison
 
@@ -8,7 +9,7 @@ cli = typer.Typer()
 console = Console()
 
 # Generate random container and value
-def generate_random_container(size: int, maximum: int, container_type: str):
+def generate_random_container(size: int, maximum: int, container_type: str) -> Union[list, dict, set]:
     import random
     import string
     random_strings = [''.join(random.choices(string.ascii_letters, k=10)) for _ in range(size)]
@@ -21,7 +22,7 @@ def generate_random_container(size: int, maximum: int, container_type: str):
     elif container_type == 'set':
         return set(random_strings)
 
-def generate_random_value(maximum: int, exceed: bool):
+def generate_random_value(maximum: int, exceed: bool) -> str:
     import random
     # Generate a random string of letters
     import string

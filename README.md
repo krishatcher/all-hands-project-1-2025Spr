@@ -43,4 +43,20 @@ Multiple test sets will be run in order to evaluate differences in quantity of s
 
 ## Running the Experiment
 
-TODO: Add instructions here outlining how to run the test suite(s) for those reviewing this repo in the future.
+In order to run the experiment which tests the algorithms, a Python script must
+run the main.py file numerous times with the different algorithms under
+varying parameters. Specifically, all three algorithms should be tested,
+each with different minimum and maximum container sizes and values.
+
+```bash
+python main.py --size 1000 --maximum 100 --container-type list
+```
+
+| Size  | Max   | Container Type | Min Execution Time (s) | Max Execution Time (s) | Avg Execution Time (s) |
+|-------|-------|---------------|------------------------|------------------------|------------------------|
+| 1000  | 100   | list          | 0.000534               | 0.000782               | 0.000623               |
+| 10000 | 1000  | list          | 0.005030               | 0.005181               | 0.005101               |
+| 1000  | 100   | dict          | 0.000935               | 0.000967               | 0.000947               |
+| 10000 | 1000  | dict          | 0.009577               | 0.010328               | 0.009866               |
+| 1000  | 100   | set           | 0.000586               | 0.000609               | 0.000594               |
+| 10000 | 1000  | set           | 0.006371               | 0.006818               | 0.006594               |
