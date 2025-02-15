@@ -27,7 +27,7 @@ def generate_random_string(length: int) -> str:
 def generate_list_of_random_strings(num_strings: int, string_length: int) -> List[str]:
     """Generate a list of random strings."""
     # Initialize an empty list to store the random strings
-    random_list = []
+    random_list: List[str] = []
     # Loop num_strings times to create the required number of random strings
     for _ in range(num_strings):
         # Call the function to create random strings of the desired length and add it to the list
@@ -39,7 +39,7 @@ def generate_list_of_random_strings(num_strings: int, string_length: int) -> Lis
 def generate_set_of_random_strings(num_strings: int, string_length: int) -> Set[str]:
     """Generate a set of random strings."""
     # Start an empty set to store the random strings
-    random_set = set()
+    random_set: Set[str] = set()
     # Loop until the set contains the required number of unique random strings
     while len(random_set) < num_strings:
         # Create random strings of the desired length and add them to the set
@@ -51,7 +51,7 @@ def generate_set_of_random_strings(num_strings: int, string_length: int) -> Set[
 def generate_dict_of_random_strings(num_strings: int, string_length: int) -> Dict[int, str]:
     """Generate a dictionary of random strings."""
     # Start an empty dictionary to store the random strings
-    random_dict = {}
+    random_dict: Dict[int, str] = {}
     # Loop num_strings times to create the required number of random strings
     for i in range(num_strings):
         # Create a random string of the desired length and add it to the dictionary
