@@ -22,10 +22,10 @@ To maintain consistency and eliminate confounding factors, the following control
 - **Consistent Execution Environment:** Tests will be executed on the same machine to minimize hardware and OS-induced variability.
 - **Multiple Runs:** Each test will be repeated multiple times to account for fluctuations in performance due to caching and other system-level optimizations.
 
-## 3. Test Design
+## 3. Experiment Design
 ### 3.1. Test Cases
 The test suite consists of multiple test cases designed to evaluate performance under different conditions:
-- **Varying Number of Strings:** Containers will be tested with different dataset sizes (e.g., ??) to observe scaling effects.
+- **Varying Number of Strings:** Containers will be tested with different dataset sizes (e.g., 2500, 5000, 10000) to observe scaling effects.
 - **Varying String Lengths:** Different string lengths (short, medium, long) will be tested to evaluate potential impacts of string size on comparison speed.
 - **Ordered vs. Unordered Comparisons:** Strings will be compared in both sequential and randomized orders to simulate different access patterns.
 
@@ -34,7 +34,7 @@ The test suite consists of multiple test cases designed to evaluate performance 
 2. Run a fixed number of equality comparisons within each container.
 3. Measure and record the total time elapsed for each test set.
 4. Repeat each test multiple times and calculate the average execution time.
-5. Output results for analysis, including standard deviation and confidence intervals where applicable.
+5. Output results for analysis.
 
 ## 4. Justification for Experimental Design
 ### 4.1. Selection of Containers
