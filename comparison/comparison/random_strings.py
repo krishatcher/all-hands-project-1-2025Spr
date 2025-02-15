@@ -1,8 +1,10 @@
 """This module provides functions to generate random strings and store them in different
 containers such as lists, sets, and dictionaries."""
 
-import random # Import the 'random' module, which provides functions for generating random numbers and data
-import string # Import the 'string' module, which provides constants and functions for working with strings
+# Import the 'random' module, which provides functions for generating random numbers and data
+import random
+# Import the 'string' module, which provides constants and functions for working with strings
+import string
 from typing import List, Set, Dict
 
 # Rosa Ruiz Gonzalez
@@ -80,8 +82,9 @@ if __name__ == "__main__":
 
 # I used three sources for my work. The first source is called Grammarly, which is an AI assistant
 # that helps me with my spelling and grammar errors. I typically use it in my comments. The second
-# source I used was to understand the module that I utilized to generate random strings, specifically `import string`.
-# The thrid source was copilot, I used to be able to genearte the type anotation I need in order to meet the class expectation.
+# source I used was to understand the module that I utilized to generate random strings,
+# specifically `import string`. The third source was copilot, I used to be able to generate the type
+# annotation I need in order to meet the class expectation.
 
-# [Gramally](https://app.grammarly.com)
+# [Grammarly](https://app.grammarly.com)
 # [educative](https://www.educative.io/answers/what-is-asciilowercase-constant-in-python)
