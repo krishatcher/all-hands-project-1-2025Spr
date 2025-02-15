@@ -1,10 +1,13 @@
+"""Perform an experiment to determine performance of string comparisons using different container types"""
+
 import timeit
-from typing import Union
+from typing import Dict, List, Set, Union
 
 import typer
 from rich.console import Console
 
-from comparison import benchmark_comparison
+from comparison import comparison_logic, random_strings
+from comparison.container_type import ContainerType
 
 # Define the CLI
 cli = typer.Typer()
@@ -13,36 +16,33 @@ console = Console()
 
 # Generate random container and value
 def generate_random_container(
-    size: int, maximum: int, container_type: str
+    size: int, maximum: int, container_type: ContainerType
 ) -> Union[list, dict, set]:
-    import random
-    import string
-
-    random_strings = [
-        "".join(random.choices(string.ascii_letters, k=10))
-        for _ in range(size)
-    ]
-    if container_type == "list":
-        # Return a list of random strings
-        return random_strings
-    elif container_type == "dict":
-        # Return a dictionary with random strings as keys and None as values
-        return {s: None for s in random_strings}
-    elif container_type == "set":
-        return set(random_strings)
-
-
-def generate_random_value(maximum: int, exceed: bool) -> str:
-    import random
-
-    # Generate a random string of letters
-    import string
-
-    # If exceed is True, generate a string that exceeds the maximum length
-    if exceed:
-        return "".join(random.choices(string.ascii_letters, k=maximum + 1))
+    """Generate the random container, calling the `random_strings` file"""
+    if container_type == ContainerType.LIST:
+        return random_strings.generate_list_of_random_strings(size, maximum)
+    elif container_type == ContainerType.DICT:
+        return random_strings.generate_dict_of_random_strings(size, maximum)
+    elif container_type == ContainerType.SET:
+        return random_strings.generate_set_of_random_strings(size, maximum)
     else:
-        return "".join(random.choices(string.ascii_letters, k=maximum))
+        empty_result: List[str] = []
+        return empty_result
+
+
+def generate_random_value(
+    maximum: int, exceed: bool, container: Union[List, Dict, Set]
+) -> str:
+    """Get a random value, either from the container or randomly"""
+    if exceed:
+        return random_strings.generate_random_string(maximum)
+
+    if isinstance(container, Set):
+        value = container.pop()
+        return value
+
+    value = container[2]
+    return value
 
 
 # Perform the containment check benchmark
@@ -55,7 +55,7 @@ def perform_containment_check_benchmark(
     # The number of runs per benchmark.
     number_repeats: int = 3,
     # The number of times to repeat the benchmark.
-) -> None:
+) -> List[float]:
     """
     Run an experiment using the timeit package for the specific function.
 
@@ -71,10 +71,21 @@ def perform_containment_check_benchmark(
     """
     times = timeit.repeat(
         # Perform the benchmark using the `benchmark_comparison` function
-        lambda: benchmark_comparison(value, container),
+        lambda: comparison_logic.compare_value_in_container(value, container),
         number=number_runs,
         repeat=number_repeats,
     )
+
+    return times
+
+
+def output_results(
+    times: List[float],
+    number_runs: int,
+    number_repeats: int,
+    container_type: ContainerType,
+) -> None:
+    """Output experiment results to console"""
     min_time = min(times)
     # Get the minimum time taken
     max_time = max(times)
@@ -84,47 +95,38 @@ def perform_containment_check_benchmark(
     total_runs = number_runs * number_repeats
     # Calculate the total number of runs
 
-    console.print(
-        f"Benchmark Results ({number_runs} runs per repeat, {number_repeats} repeats):"
-    )
-    console.print(f"Total runs: {total_runs}")  # Total number of runs
-    console.print(f"Min execution time: {min_time:.6f} seconds")
-    console.print(f"Max execution time: {max_time:.6f} seconds")
-    console.print(f"Avg execution time: {avg_time:.6f} seconds")
-    console.print(f"Number of runs per benchmark: {number_runs}")
-    console.print(f"Number of repeats: {number_repeats}")
+    console.print(" =============================================== ")
+    console.print(" =              Benchmark Results              = ")
+    console.print(" =============================================== ")
+    console.print(f" Number of Benchmarks: {number_repeats}")
+    console.print(f" Number of Runs per Benchmark: {number_runs}")
+    console.print(f" Total Runs: {total_runs}")
+    console.print(f" Container Type: {container_type}")
+    console.print(" ----------------------------------------------- ")
+    console.print(f" Min execution time: {min_time:.6f} seconds")
+    console.print(f" Avg execution time: {avg_time:.6f} seconds")
+    console.print(f" Max execution time: {max_time:.6f} seconds")
+    console.print(" ----------------------------------------------- ")
 
 
 # Main function to run the experimental suite
 @cli.command()
-def main(
-    size: int = typer.Option(..., help="The size of the container."),
-    # The maximum value of the integer values stored in the container.
-    maximum: int = typer.Option(
-        ...,
-        help="The maximum value of the integer values stored in the container.",
-    ),
-    # The type of container to use (list, dict, set).
-    container_type: str = typer.Option(
-        ..., help="The type of container to use (list, dict, set)."
-    ),
-    # Whether or not the searching algorithm should look for a value that exceeds the maximum value.
-    exceed: bool = typer.Option(
-        # Default value is
-        False,
-        help="Whether or not the searching algorithm should look for a value that exceeds the maximum value.",
-        is_flag=True,
-    ),
-) -> None:  # The return type of the function is None
+def comparison(
+    size: int = typer.Option(5000),
+    maximum: int = typer.Option(100),
+    container_type: ContainerType = ContainerType.LIST,
+    exceed: bool = typer.Option(False),
+) -> None:
+    """The main entry point of this program"""
+    number_runs = 10
+    number_repeats = 3
+
     random_container = generate_random_container(size, maximum, container_type)
     # Generate a random value
-    random_value = generate_random_value(maximum, exceed)
+    random_value = generate_random_value(maximum, exceed, random_container)
     # Perform the containment check benchmark
-
-    perform_containment_check_benchmark(random_value, random_container)
-    # Perform the containment check benchmark
-
-
-# Entry point of the script
-if __name__ == "__main__":
-    cli()
+    times = perform_containment_check_benchmark(
+        random_value, random_container, number_runs, number_repeats
+    )
+    # Output results to console
+    output_results(times, number_runs, number_repeats, container_type)
