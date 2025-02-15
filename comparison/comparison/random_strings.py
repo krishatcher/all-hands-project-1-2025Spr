@@ -59,26 +59,6 @@ def generate_dict_of_random_strings(num_strings: int, string_length: int) -> Dic
         random_dict[i] = generate_random_string(string_length)
     return random_dict
 
-# Main part of the script
-# This line checks if the script is being run directly (not imported as a module in another script).
-if __name__ == "__main__":
-    num_strings = 1000  # Number of random strings to generate
-    string_length = 5  # Length of each random string
-
-    # Generate containers of random strings
-    # Generate a list of random strings
-    random_list = generate_list_of_random_strings(num_strings, string_length)
-    # Generate a set of random strings
-    random_set = generate_set_of_random_strings(num_strings, string_length)
-    # Generate a dict of random strings
-    random_dict = generate_dict_of_random_strings(num_strings, string_length)
-
-    # Print one random string from each container
-    print(f"List of random strings: {random_list[:1]}")
-    # Convert the set to a list to allow slicing, but the original set remains unchanged
-    print(f"Set of random strings: {list(random_set)[:1]}")
-    # Convert the dictionary items to a list to allow slicing, but the original dictionary remains unchanged
-    print(f"Dict of random strings: {list(random_dict.items())[:1]}")
 
 # I used three sources for my work. The first source is called Grammarly, which is an AI assistant
 # that helps me with my spelling and grammar errors. I typically use it in my comments. The second
