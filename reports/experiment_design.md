@@ -18,7 +18,6 @@ To systematically evaluate the impact of container type on comparison speed, we 
 ### 2.3. Control Variables
 To maintain consistency and eliminate confounding factors, the following controls are applied:
 - **Fixed Number of Comparisons:** Each test set will execute a pre-determined quantity of string equality comparisons.
-- **Identical String Dataset:** The same group of strings will be used in all containers to ensure uniformity.
 - **Consistent Execution Environment:** Tests will be executed on the same machine to minimize hardware and OS-induced variability.
 - **Multiple Runs:** Each test will be repeated multiple times to account for fluctuations in performance due to caching and other system-level optimizations.
 
