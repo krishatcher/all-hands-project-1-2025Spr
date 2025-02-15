@@ -43,20 +43,44 @@ Multiple test sets will be run in order to evaluate differences in quantity of s
 
 ## Running the Experiment
 
-In order to run the experiment which tests the algorithms, a Python script must
-run the main.py file numerous times with the different algorithms under
-varying parameters. Specifically, all three algorithms should be tested,
-each with different minimum and maximum container sizes and values.
+In order to execute the code in this repo, a user must call the CLI function and pass in options.
 
-```bash
-python main.py --size 1000 --maximum 100 --container-type list
+### Basic Command
+
+`poetry run comparison`
+
+This will run the program with default parameters and output the results in a format such as the example below.
+
+```command
+> poetry run comparison                                  
+ =============================================== 
+ =              Benchmark Results              = 
+ =============================================== 
+ Number of Benchmarks: 3
+ Number of Runs per Benchmark: 10
+ Total Runs: 30
+ Container Type: list
+ ----------------------------------------------- 
+ Min execution time: 0.000966 seconds
+ Avg execution time: 0.001083 seconds
+ Max execution time: 0.001180 seconds
+ -----------------------------------------------
 ```
 
-| Size  | Max   | Container Type | Min Execution Time (s) | Max Execution Time (s) | Avg Execution Time (s) |
-|-------|-------|---------------|------------------------|------------------------|------------------------|
-| 1000  | 100   | list          | 0.000534               | 0.000782               | 0.000623               |
-| 10000 | 1000  | list          | 0.005030               | 0.005181               | 0.005101               |
-| 1000  | 100   | dict          | 0.000935               | 0.000967               | 0.000947               |
-| 10000 | 1000  | dict          | 0.009577               | 0.010328               | 0.009866               |
-| 1000  | 100   | set           | 0.000586               | 0.000609               | 0.000594               |
-| 10000 | 1000  | set           | 0.006371               | 0.006818               | 0.006594               |
+### Parameters
+
+#### Size
+
+This allows the caller to set the size of the container to be tested and is set to 5,000 by default. Any valid integer can be passed to the `-size` param.  For example, if the caller wanted to set the size of the tested container to 100,000 records, they would append ` -size 100000` to the end of the basic command, above.
+
+#### Maximum
+
+This param determines the size of each string in the tested container. By default, this param is set to 100. Any valid integer can be passed to the `-maximum` param. A caller desiring to adjust that default value would append ` -maximum 1000` to the end of the basic command, above.
+
+#### Container Type
+
+The program provides three container types for testing: List, Dictionary, and Set. The 'List' type is the default container. Callers wishing to change this would pass the desired container type with the `-container-type` param. For example, using a 'dict' type would be accomplished by appending ` -container-type dict` to the basic command, above.
+
+#### Exceed
+
+If the caller wishes to run the checking with a value which does not exist in the container, they can use the param. The default value is 'False', however simply appending ` -exceed` to the end of the basic command, above, will flip this flag.
