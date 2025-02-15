@@ -3,11 +3,13 @@ containers such as lists, sets, and dictionaries."""
 
 # Import the 'random' module, which provides functions for generating random numbers and data
 import random
+
 # Import the 'string' module, which provides constants and functions for working with strings
 import string
-from typing import List, Set, Dict
+from typing import Dict, List, Set
 
 # Rosa Ruiz Gonzalez
+
 
 # Function to generate a random string of a given length
 def generate_random_string(length: int) -> str:
@@ -23,8 +25,11 @@ def generate_random_string(length: int) -> str:
     # Return the created random string
     return random_string
 
+
 # Function to generate a list of random strings
-def generate_list_of_random_strings(num_strings: int, string_length: int) -> List[str]:
+def generate_list_of_random_strings(
+    num_strings: int, string_length: int
+) -> List[str]:
     """Generate a list of random strings."""
     # Initialize an empty list to store the random strings
     random_list: List[str] = []
@@ -35,8 +40,11 @@ def generate_list_of_random_strings(num_strings: int, string_length: int) -> Lis
     # Return the list of random strings
     return random_list
 
+
 # Function to generate a set of random strings (sets do not allow duplicates)
-def generate_set_of_random_strings(num_strings: int, string_length: int) -> Set[str]:
+def generate_set_of_random_strings(
+    num_strings: int, string_length: int
+) -> Set[str]:
     """Generate a set of random strings."""
     # Start an empty set to store the random strings
     random_set: Set[str] = set()
@@ -47,8 +55,11 @@ def generate_set_of_random_strings(num_strings: int, string_length: int) -> Set[
     # Return the set of random strings
     return random_set
 
+
 # Function to generate a dictionary of random strings with indices as keys
-def generate_dict_of_random_strings(num_strings: int, string_length: int) -> Dict[int, str]:
+def generate_dict_of_random_strings(
+    num_strings: int, string_length: int
+) -> Dict[int, str]:
     """Generate a dictionary of random strings."""
     # Start an empty dictionary to store the random strings
     random_dict: Dict[int, str] = {}
