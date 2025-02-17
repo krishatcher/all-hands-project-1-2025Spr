@@ -43,39 +43,39 @@ We expect to need to run a total of 18 test runs in order to collect sufficient 
 - Long List of Short Strings
   - Data Container: run once for each of `set`, `list`, and `dict`
   - Number of Strings: 10000
-  - String Length: Short
+  - String Length: 50
 - Medium List of Short Strings
   - Data Container: run once for each of `set`, `list`, and `dict`
   - Number of Strings: 5000
-  - String Length: Short
+  - String Length: 50
 - Short List of Short Strings
   - Data Container: run once for each of `set`, `list`, and `dict`
   - Number of Strings: 2500
-  - String Length: Short
+  - String Length: 50
 - Long List of Medium Strings
   - Data Container: run once for each of `set`, `list`, and `dict`
   - Number of Strings: 10000
-  - String Length: Medium
+  - String Length: 100
 - Medium List of Medium Strings
   - Data Container: run once for each of `set`, `list`, and `dict`
   - Number of Strings: 5000
-  - String Length: Medium
+  - String Length: 100
 - Short List of Medium Strings
   - Data Container: run once for each of `set`, `list`, and `dict`
   - Number of Strings: 2500
-  - String Length: Medium
+  - String Length: 100
 - Long List of Long Strings
   - Data Container: run once for each of `set`, `list`, and `dict`
   - Number of Strings: 10000
-  - String Length: Long
+  - String Length: 200
 - Medium List of Long Strings
   - Data Container: run once for each of `set`, `list`, and `dict`
   - Number of Strings: 5000
-  - String Length: Long
+  - String Length: 200
 - Short List of Long Strings
   - Data Container: run once for each of `set`, `list`, and `dict`
   - Number of Strings: 2500
-  - String Length: Long
+  - String Length: 200
 
 ### 3.2. Procedure
 
