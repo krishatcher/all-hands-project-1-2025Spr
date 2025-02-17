@@ -29,19 +29,18 @@ To maintain consistency and eliminate confounding factors, the following control
 
 ## 3. Experiment Design
 
-### 3.1. Test Cases
+### 3.1. Cases
 
-The test suite consists of multiple test cases designed to evaluate performance under different conditions:
+The experimental suite consists of multiple runs designed to evaluate performance under different conditions:
 
-- **Varying Number of Strings:** Containers will be tested with different dataset sizes (e.g., 2500, 5000, 10000) to observe scaling effects.
+- **Varying Number of Strings:** Containers will be tested with different dataset sizes (2500, 5000, 10000) to observe scaling effects.
 - **Varying String Lengths:** Different string lengths (short, medium, long) will be tested to evaluate potential impacts of string size on comparison speed.
-- **Ordered vs. Unordered Comparisons:** Strings will be compared in both sequential and randomized orders to simulate different access patterns.
 
 ### 3.2. Procedure
 
-1. Populate each container (List, Set, Dict) with an identical dataset of strings.
-2. Run a fixed number of equality comparisons within each container.
-3. Measure and record the total time elapsed for each test set.
+1. Populate selected container (List, Set, Dict) with a random dataset of strings.
+2. Run a fixed number of equality comparisons within container.
+3. Measure and record the total time elapsed for each set of runs.
 4. Repeat each test multiple times and calculate the average execution time.
 5. Output results for analysis.
 
