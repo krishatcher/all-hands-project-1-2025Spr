@@ -71,12 +71,12 @@ This will run the program with default parameters and output the results in a fo
 
 #### Size
 
-This allows the caller to set the size of the container to be tested and is set to 5,000 by default. Any valid integer can be passed to the `-size` param.  For example, if the caller wanted to set the size of the tested container to 100,000 records, they would append ` -size 100000` to the end of the basic command, above.
+This allows the caller to set the size of the container to be tested and is set to 5,000 by default. Any valid integer can be passed to the `--size` param.  For example, if the caller wanted to set the size of the tested container to 100,000 records, they would append ` --size 100000` to the end of the basic command, above.
 
 #### Maximum
 
-This param determines the size of each string in the tested container. By default, this param is set to 100. Any valid integer can be passed to the `-maximum` param. A caller desiring to adjust that default value would append ` -maximum 1000` to the end of the basic command, above.
+This param determines the size of each string in the tested container. By default, this param is set to 100. Any valid integer can be passed to the `--maximum` param. A caller desiring to adjust that default value would append ` --maximum 1000` to the end of the basic command, above.
 
 #### Container Type
 
-The program provides three container types for testing: List, Dictionary, and Set. The 'List' type is the default container. Callers wishing to change this would pass the desired container type with the `-container-type` param. For example, using a 'dict' type would be accomplished by appending ` -container-type dict` to the basic command, above.
+The program provides three container types for testing: List, Dictionary, and Set. The 'List' type is the default container. Callers wishing to change this would pass the desired container type with the `--container-type` param. For example, using a 'dict' type would be accomplished by appending ` --container-type dict` to the basic command, above.
