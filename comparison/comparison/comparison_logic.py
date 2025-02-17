@@ -12,16 +12,16 @@ def compare_value_in_container(
     Compare the passed value with each element in the container.
     """
     # Depending on the type of container, loop through and compare values
+    # For lists and sets, compare directly to each element
     if isinstance(container, (list, set)):
-        # For lists and sets, compare directly to each element
         return [value == item for item in container]
 
-    elif isinstance(container, dict):
-        # For dictionaries, compare the value against each key-value pair
-        return [value == container[key] for key in container]
+    # For dictionaries, compare the value against each key-value pair
+    if isinstance(container, dict):
+        return [value == entry for entry in container.values()]
 
-    else:
-        raise TypeError("Unsupported container type")
+    # Container type is unsupported by this toolset 
+    raise TypeError("Unsupported container type")
 
 
 # Function to benchmark the time taken for comparisons in containers
