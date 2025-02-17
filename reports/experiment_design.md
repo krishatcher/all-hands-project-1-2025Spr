@@ -36,6 +36,47 @@ The experimental suite consists of multiple runs designed to evaluate performanc
 - **Varying Number of Strings:** Containers will be tested with different dataset sizes (2500, 5000, 10000) to observe scaling effects.
 - **Varying String Lengths:** Different string lengths (short, medium, long) will be tested to evaluate potential impacts of string size on comparison speed.
 
+We expect to need to run a total of 18 test runs in order to collect sufficient data to answer our research question. Details of those 18 runs are outlined below. Note that, for all runs, we will perform 3 sets of 10 experiments each.
+
+#### 3.1.1. Detailed Case Outline
+
+- Long List of Short Strings
+  - Data Container: run once for each of `set`, `list`, and `dict`
+  - Number of Strings: 10000
+  - String Length: Short
+- Medium List of Short Strings
+  - Data Container: run once for each of `set`, `list`, and `dict`
+  - Number of Strings: 5000
+  - String Length: Short
+- Short List of Short Strings
+  - Data Container: run once for each of `set`, `list`, and `dict`
+  - Number of Strings: 2500
+  - String Length: Short
+- Long List of Medium Strings
+  - Data Container: run once for each of `set`, `list`, and `dict`
+  - Number of Strings: 10000
+  - String Length: Medium
+- Medium List of Medium Strings
+  - Data Container: run once for each of `set`, `list`, and `dict`
+  - Number of Strings: 5000
+  - String Length: Medium
+- Short List of Medium Strings
+  - Data Container: run once for each of `set`, `list`, and `dict`
+  - Number of Strings: 2500
+  - String Length: Medium
+- Long List of Long Strings
+  - Data Container: run once for each of `set`, `list`, and `dict`
+  - Number of Strings: 10000
+  - String Length: Long
+- Medium List of Long Strings
+  - Data Container: run once for each of `set`, `list`, and `dict`
+  - Number of Strings: 5000
+  - String Length: Long
+- Short List of Long Strings
+  - Data Container: run once for each of `set`, `list`, and `dict`
+  - Number of Strings: 2500
+  - String Length: Long
+
 ### 3.2. Procedure
 
 1. Populate selected container (List, Set, Dict) with a random dataset of strings.
