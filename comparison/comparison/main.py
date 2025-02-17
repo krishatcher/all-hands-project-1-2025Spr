@@ -68,24 +68,23 @@ def output_results(
     times: List[float],
     number_runs: int,
     number_repeats: int,
+    str_length: int,
     container_type: ContainerType,
 ) -> None:
     """Output experiment results to console"""
-    min_time = min(times)
     # Get the minimum time taken
-    max_time = max(times)
+    min_time = min(times)
     # Get the maximum time taken
-    avg_time = sum(times) / len(times)
+    max_time = max(times)
     # Calculate the average time taken
-    total_runs = number_runs * number_repeats
-    # Calculate the total number of runs
+    avg_time = sum(times) / len(times)
 
     console.print(" =============================================== ")
     console.print(" =              Benchmark Results              = ")
     console.print(" =============================================== ")
     console.print(f" Number of Benchmarks: {number_repeats}")
     console.print(f" Number of Runs per Benchmark: {number_runs}")
-    console.print(f" Total Runs: {total_runs}")
+    console.print(f" String Length: {str_length}")
     console.print(f" Container Type: {container_type}")
     console.print(" ----------------------------------------------- ")
     console.print(f" Min execution time: {min_time:.6f} seconds")
@@ -113,4 +112,4 @@ def comparison(
         random_value, random_container, number_runs, number_repeats
     )
     # Output results to console
-    output_results(times, number_runs, number_repeats, container_type)
+    output_results(times, number_runs, number_repeats, maximum, container_type)

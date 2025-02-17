@@ -58,7 +58,7 @@ This will run the program with default parameters and output the results in a fo
  =============================================== 
  Number of Benchmarks: 3
  Number of Runs per Benchmark: 10
- Total Runs: 30
+ String Length: 100
  Container Type: list
  ----------------------------------------------- 
  Min execution time: 0.000966 seconds
