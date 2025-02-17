@@ -30,21 +30,6 @@ def generate_random_container(
         return empty_result
 
 
-def generate_random_value(
-    maximum: int, exceed: bool, container: Union[List, Dict, Set]
-) -> str:
-    """Get a random value, either from the container or randomly"""
-    if exceed:
-        return random_strings.generate_random_string(maximum)
-
-    if isinstance(container, Set):
-        value = container.pop()
-        return value
-
-    value = container[2]
-    return value
-
-
 # Perform the containment check benchmark
 def perform_containment_check_benchmark(
     value: str,
@@ -114,8 +99,7 @@ def output_results(
 def comparison(
     size: int = typer.Option(5000),
     maximum: int = typer.Option(100),
-    container_type: ContainerType = ContainerType.LIST,
-    exceed: bool = typer.Option(False),
+    container_type: ContainerType = ContainerType.LIST
 ) -> None:
     """The main entry point of this program"""
     number_runs = 10
@@ -123,7 +107,7 @@ def comparison(
 
     random_container = generate_random_container(size, maximum, container_type)
     # Generate a random value
-    random_value = generate_random_value(maximum, exceed, random_container)
+    random_value = random_strings.generate_random_string(maximum)
     # Perform the containment check benchmark
     times = perform_containment_check_benchmark(
         random_value, random_container, number_runs, number_repeats

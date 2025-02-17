@@ -80,7 +80,3 @@ This param determines the size of each string in the tested container. By defaul
 #### Container Type
 
 The program provides three container types for testing: List, Dictionary, and Set. The 'List' type is the default container. Callers wishing to change this would pass the desired container type with the `-container-type` param. For example, using a 'dict' type would be accomplished by appending ` -container-type dict` to the basic command, above.
-
-#### Exceed
-
-If the caller wishes to run the checking with a value which does not exist in the container, they can use the param. The default value is 'False', however simply appending ` -exceed` to the end of the basic command, above, will flip this flag.
