@@ -1,0 +1,45 @@
+cd ~/Git/CS202/project-1-krishatcher/systemsense
+
+poetry run systemsense completeinfo
+
+cd ~/Git/CS202/all-hands-project-1-2025Spr/comparison
+
+poetry run comparison --size 100000 --maximum 100 --container-type set
+poetry run comparison --size 100000 --maximum 100 --container-type list
+poetry run comparison --size 100000 --maximum 100 --container-type dict
+
+poetry run comparison --size 50000 --maximum 100 --container-type set
+poetry run comparison --size 50000 --maximum 100 --container-type list
+poetry run comparison --size 50000 --maximum 100 --container-type dict
+
+poetry run comparison --size 25000 --maximum 100 --container-type set
+poetry run comparison --size 25000 --maximum 100 --container-type list
+poetry run comparison --size 25000 --maximum 100 --container-type dict
+
+poetry run comparison --size 100000 --maximum 200 --container-type set
+poetry run comparison --size 100000 --maximum 200 --container-type list
+poetry run comparison --size 100000 --maximum 200 --container-type dict
+
+poetry run comparison --size 50000 --maximum 200 --container-type set
+poetry run comparison --size 50000 --maximum 200 --container-type list
+poetry run comparison --size 50000 --maximum 200 --container-type dict
+
+poetry run comparison --size 25000 --maximum 200 --container-type set
+poetry run comparison --size 25000 --maximum 200 --container-type list
+poetry run comparison --size 25000 --maximum 200 --container-type dict
+
+poetry run comparison --size 100000 --maximum 400 --container-type set
+poetry run comparison --size 100000 --maximum 400 --container-type list
+poetry run comparison --size 100000 --maximum 400 --container-type dict
+
+poetry run comparison --size 50000 --maximum 400 --container-type set
+poetry run comparison --size 50000 --maximum 400 --container-type list
+poetry run comparison --size 50000 --maximum 400 --container-type dict
+
+poetry run comparison --size 25000 --maximum 400 --container-type set
+poetry run comparison --size 25000 --maximum 400 --container-type list
+poetry run comparison --size 25000 --maximum 400 --container-type dict
+
+cd ~/Git/CS202/project-1-krishatcher/systemsense
+
+poetry run systemsense completeinfo
