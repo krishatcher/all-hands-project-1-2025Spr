@@ -1,0 +1,432 @@
+Last login: Sat Feb 15 17:04:20 on ttys028
+krishatcher@Speedy ~ % cd ~/Git/CS202/project-1-krishatcher/systemsense
+krishatcher@Speedy systemsense % poetry run systemsense completeinfo
+✨ Displaying System Information
+
+╭───────────────────────────────────────── System Information ─────────────────────────────────────────╮
+│ ╭──────────────────┬────────────────────────────────────────────────────────────────────╮            │
+│ │ System Parameter │ Parameter Value                                                    │            │
+│ ├──────────────────┼────────────────────────────────────────────────────────────────────┤            │
+│ │ battery          │ 100.00% battery life remaining, unknown seconds remaining          │            │
+│ │ cpu              │ x86_64 (i386)                                                      │            │
+│ │ cpucores         │ 8 cores (16 logical)                                               │            │
+│ │ cpufrequencies   │ Min: 2300 Mhz, Max: 2300 Mhz                                       │            │
+│ │ datetime         │ 2025-02-17 11:25:30.687497                                         │            │
+│ │ disk             │ Using 10.39 GB of 931.55 GB                                        │            │
+│ │ hostname         │ Speedy.local                                                       │            │
+│ │ memory           │ Using 5.94 GB of 16.00 GB                                          │            │
+│ │ platform         │ posix - Darwin (24.3.0)                                            │            │
+│ │ pythonversion    │ 3.12.8 (main, Dec  3 2024, 18:42:41) [Clang 19.1.5 ]               │            │
+│ │ runningprocesses │ 709 running processes                                              │            │
+│ │ swap             │ Using 0.97 GB of 2.00 GB                                           │            │
+│ │ system           │ macOS                                                              │            │
+│ │ systemload       │ ['17.73% over 1 min', '22.86% over 5 mins', '21.21% over 15 mins'] │            │
+│ │ virtualenv       │ You are in a virtual environment.                                  │            │
+│ ╰──────────────────┴────────────────────────────────────────────────────────────────────╯            │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+🏁 Displaying Benchmark Results
+
+╭─────────────────────────────────────── Benchmark Information ────────────────────────────────────────╮
+│ ╭────────────────┬─────────────────────────────────────────────────────────────────╮                 │
+│ │ Benchmark Name │ Benchmark Results (sec)                                         │                 │
+│ ├────────────────┼─────────────────────────────────────────────────────────────────┤                 │
+│ │ addition       │ [0.7277207620209083, 0.7254121170262806, 0.7252191869774833]    │                 │
+│ │ concatenation  │ [3.914259117038455, 3.8706369920400903, 3.8979728069971316]     │                 │
+│ │ exponentiation │ [3.920836806006264, 3.9959056230145507, 4.023764781013597]      │                 │
+│ │ multiplication │ [0.570526739989873, 0.5755163070280105, 0.5644890440162271]     │                 │
+│ │ rangelist      │ [0.18476105196168646, 0.17154056596336886, 0.18106170295504853] │                 │
+│ ╰────────────────┴─────────────────────────────────────────────────────────────────╯                 │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────╯
+krishatcher@Speedy systemsense % cd ~/Git/CS202/all-hands-project-1-2025Spr/comparison
+krishatcher@Speedy comparison % poetry run comparison --size 100000 --maximum 100 --container-type set
+ =============================================== 
+ =              Benchmark Results              = 
+ =============================================== 
+ Number of Benchmarks: 3
+ Number of Runs per Benchmark: 10
+ String Length: 100
+ Container Type: set
+ ----------------------------------------------- 
+ Min execution time: 0.073553 seconds
+ Avg execution time: 0.073723 seconds
+ Max execution time: 0.073947 seconds
+ ----------------------------------------------- 
+krishatcher@Speedy comparison % poetry run comparison --size 100000 --maximum 100 --container-type list
+ =============================================== 
+ =              Benchmark Results              = 
+ =============================================== 
+ Number of Benchmarks: 3
+ Number of Runs per Benchmark: 10
+ String Length: 100
+ Container Type: list
+ ----------------------------------------------- 
+ Min execution time: 0.018447 seconds
+ Avg execution time: 0.018741 seconds
+ Max execution time: 0.019304 seconds
+ ----------------------------------------------- 
+krishatcher@Speedy comparison % poetry run comparison --size 100000 --maximum 100 --container-type dict
+ =============================================== 
+ =              Benchmark Results              = 
+ =============================================== 
+ Number of Benchmarks: 3
+ Number of Runs per Benchmark: 10
+ String Length: 100
+ Container Type: dict
+ ----------------------------------------------- 
+ Min execution time: 0.021495 seconds
+ Avg execution time: 0.022215 seconds
+ Max execution time: 0.023176 seconds
+ ----------------------------------------------- 
+krishatcher@Speedy comparison % poetry run comparison --size 50000 --maximum 100 --container-type set
+ =============================================== 
+ =              Benchmark Results              = 
+ =============================================== 
+ Number of Benchmarks: 3
+ Number of Runs per Benchmark: 10
+ String Length: 100
+ Container Type: set
+ ----------------------------------------------- 
+ Min execution time: 0.015568 seconds
+ Avg execution time: 0.016286 seconds
+ Max execution time: 0.017164 seconds
+ ----------------------------------------------- 
+krishatcher@Speedy comparison % poetry run comparison --size 50000 --maximum 100 --container-type list
+ =============================================== 
+ =              Benchmark Results              = 
+ =============================================== 
+ Number of Benchmarks: 3
+ Number of Runs per Benchmark: 10
+ String Length: 100
+ Container Type: list
+ ----------------------------------------------- 
+ Min execution time: 0.008816 seconds
+ Avg execution time: 0.009133 seconds
+ Max execution time: 0.009390 seconds
+ ----------------------------------------------- 
+krishatcher@Speedy comparison % poetry run comparison --size 50000 --maximum 100 --container-type dict
+ =============================================== 
+ =              Benchmark Results              = 
+ =============================================== 
+ Number of Benchmarks: 3
+ Number of Runs per Benchmark: 10
+ String Length: 100
+ Container Type: dict
+ ----------------------------------------------- 
+ Min execution time: 0.010052 seconds
+ Avg execution time: 0.010084 seconds
+ Max execution time: 0.010136 seconds
+ ----------------------------------------------- 
+krishatcher@Speedy comparison % poetry run comparison --size 25000 --maximum 100 --container-type set
+ =============================================== 
+ =              Benchmark Results              = 
+ =============================================== 
+ Number of Benchmarks: 3
+ Number of Runs per Benchmark: 10
+ String Length: 100
+ Container Type: set
+ ----------------------------------------------- 
+ Min execution time: 0.007795 seconds
+ Avg execution time: 0.009405 seconds
+ Max execution time: 0.011840 seconds
+ ----------------------------------------------- 
+krishatcher@Speedy comparison % poetry run comparison --size 25000 --maximum 100 --container-type list
+ =============================================== 
+ =              Benchmark Results              = 
+ =============================================== 
+ Number of Benchmarks: 3
+ Number of Runs per Benchmark: 10
+ String Length: 100
+ Container Type: list
+ ----------------------------------------------- 
+ Min execution time: 0.004432 seconds
+ Avg execution time: 0.004523 seconds
+ Max execution time: 0.004619 seconds
+ ----------------------------------------------- 
+krishatcher@Speedy comparison % poetry run comparison --size 25000 --maximum 100 --container-type dict
+ =============================================== 
+ =              Benchmark Results              = 
+ =============================================== 
+ Number of Benchmarks: 3
+ Number of Runs per Benchmark: 10
+ String Length: 100
+ Container Type: dict
+ ----------------------------------------------- 
+ Min execution time: 0.004996 seconds
+ Avg execution time: 0.005133 seconds
+ Max execution time: 0.005233 seconds
+ ----------------------------------------------- 
+krishatcher@Speedy comparison % poetry run comparison --size 100000 --maximum 200 --container-type set
+ =============================================== 
+ =              Benchmark Results              = 
+ =============================================== 
+ Number of Benchmarks: 3
+ Number of Runs per Benchmark: 10
+ String Length: 200
+ Container Type: set
+ ----------------------------------------------- 
+ Min execution time: 0.102771 seconds
+ Avg execution time: 0.105011 seconds
+ Max execution time: 0.107937 seconds
+ ----------------------------------------------- 
+krishatcher@Speedy comparison % poetry run comparison --size 100000 --maximum 200 --container-type list
+ =============================================== 
+ =              Benchmark Results              = 
+ =============================================== 
+ Number of Benchmarks: 3
+ Number of Runs per Benchmark: 10
+ String Length: 200
+ Container Type: list
+ ----------------------------------------------- 
+ Min execution time: 0.027504 seconds
+ Avg execution time: 0.028650 seconds
+ Max execution time: 0.029245 seconds
+ ----------------------------------------------- 
+krishatcher@Speedy comparison % poetry run comparison --size 100000 --maximum 200 --container-type dict
+ =============================================== 
+ =              Benchmark Results              = 
+ =============================================== 
+ Number of Benchmarks: 3
+ Number of Runs per Benchmark: 10
+ String Length: 200
+ Container Type: dict
+ ----------------------------------------------- 
+ Min execution time: 0.030532 seconds
+ Avg execution time: 0.032309 seconds
+ Max execution time: 0.033476 seconds
+ ----------------------------------------------- 
+krishatcher@Speedy comparison % poetry run comparison --size 50000 --maximum 200 --container-type set
+ =============================================== 
+ =              Benchmark Results              = 
+ =============================================== 
+ Number of Benchmarks: 3
+ Number of Runs per Benchmark: 10
+ String Length: 200
+ Container Type: set
+ ----------------------------------------------- 
+ Min execution time: 0.042385 seconds
+ Avg execution time: 0.047238 seconds
+ Max execution time: 0.051337 seconds
+ ----------------------------------------------- 
+krishatcher@Speedy comparison % poetry run comparison --size 50000 --maximum 200 --container-type list
+ =============================================== 
+ =              Benchmark Results              = 
+ =============================================== 
+ Number of Benchmarks: 3
+ Number of Runs per Benchmark: 10
+ String Length: 200
+ Container Type: list
+ ----------------------------------------------- 
+ Min execution time: 0.010158 seconds
+ Avg execution time: 0.010570 seconds
+ Max execution time: 0.011372 seconds
+ ----------------------------------------------- 
+krishatcher@Speedy comparison % poetry run comparison --size 50000 --maximum 200 --container-type dict
+ =============================================== 
+ =              Benchmark Results              = 
+ =============================================== 
+ Number of Benchmarks: 3
+ Number of Runs per Benchmark: 10
+ String Length: 200
+ Container Type: dict
+ ----------------------------------------------- 
+ Min execution time: 0.014681 seconds
+ Avg execution time: 0.015522 seconds
+ Max execution time: 0.016787 seconds
+ ----------------------------------------------- 
+krishatcher@Speedy comparison % poetry run comparison --size 25000 --maximum 200 --container-type set
+ =============================================== 
+ =              Benchmark Results              = 
+ =============================================== 
+ Number of Benchmarks: 3
+ Number of Runs per Benchmark: 10
+ String Length: 200
+ Container Type: set
+ ----------------------------------------------- 
+ Min execution time: 0.008394 seconds
+ Avg execution time: 0.008806 seconds
+ Max execution time: 0.009481 seconds
+ ----------------------------------------------- 
+krishatcher@Speedy comparison % poetry run comparison --size 25000 --maximum 200 --container-type list
+ =============================================== 
+ =              Benchmark Results              = 
+ =============================================== 
+ Number of Benchmarks: 3
+ Number of Runs per Benchmark: 10
+ String Length: 200
+ Container Type: list
+ ----------------------------------------------- 
+ Min execution time: 0.004929 seconds
+ Avg execution time: 0.006933 seconds
+ Max execution time: 0.009785 seconds
+ ----------------------------------------------- 
+krishatcher@Speedy comparison % poetry run comparison --size 25000 --maximum 200 --container-type dict
+ =============================================== 
+ =              Benchmark Results              = 
+ =============================================== 
+ Number of Benchmarks: 3
+ Number of Runs per Benchmark: 10
+ String Length: 200
+ Container Type: dict
+ ----------------------------------------------- 
+ Min execution time: 0.005190 seconds
+ Avg execution time: 0.005400 seconds
+ Max execution time: 0.005553 seconds
+ ----------------------------------------------- 
+krishatcher@Speedy comparison % poetry run comparison --size 100000 --maximum 400 --container-type set
+ =============================================== 
+ =              Benchmark Results              = 
+ =============================================== 
+ Number of Benchmarks: 3
+ Number of Runs per Benchmark: 10
+ String Length: 400
+ Container Type: set
+ ----------------------------------------------- 
+ Min execution time: 0.107843 seconds
+ Avg execution time: 0.109054 seconds
+ Max execution time: 0.110224 seconds
+ ----------------------------------------------- 
+krishatcher@Speedy comparison % poetry run comparison --size 100000 --maximum 400 --container-type list
+ =============================================== 
+ =              Benchmark Results              = 
+ =============================================== 
+ Number of Benchmarks: 3
+ Number of Runs per Benchmark: 10
+ String Length: 400
+ Container Type: list
+ ----------------------------------------------- 
+ Min execution time: 0.038784 seconds
+ Avg execution time: 0.039341 seconds
+ Max execution time: 0.039654 seconds
+ ----------------------------------------------- 
+krishatcher@Speedy comparison % poetry run comparison --size 100000 --maximum 400 --container-type dict
+ =============================================== 
+ =              Benchmark Results              = 
+ =============================================== 
+ Number of Benchmarks: 3
+ Number of Runs per Benchmark: 10
+ String Length: 400
+ Container Type: dict
+ ----------------------------------------------- 
+ Min execution time: 0.044132 seconds
+ Avg execution time: 0.045181 seconds
+ Max execution time: 0.046891 seconds
+ ----------------------------------------------- 
+krishatcher@Speedy comparison % poetry run comparison --size 50000 --maximum 400 --container-type set
+ =============================================== 
+ =              Benchmark Results              = 
+ =============================================== 
+ Number of Benchmarks: 3
+ Number of Runs per Benchmark: 10
+ String Length: 400
+ Container Type: set
+ ----------------------------------------------- 
+ Min execution time: 0.032686 seconds
+ Avg execution time: 0.034432 seconds
+ Max execution time: 0.035384 seconds
+ ----------------------------------------------- 
+krishatcher@Speedy comparison % poetry run comparison --size 50000 --maximum 400 --container-type list
+ =============================================== 
+ =              Benchmark Results              = 
+ =============================================== 
+ Number of Benchmarks: 3
+ Number of Runs per Benchmark: 10
+ String Length: 400
+ Container Type: list
+ ----------------------------------------------- 
+ Min execution time: 0.012241 seconds
+ Avg execution time: 0.013212 seconds
+ Max execution time: 0.014575 seconds
+ ----------------------------------------------- 
+krishatcher@Speedy comparison % poetry run comparison --size 50000 --maximum 400 --container-type dict
+ =============================================== 
+ =              Benchmark Results              = 
+ =============================================== 
+ Number of Benchmarks: 3
+ Number of Runs per Benchmark: 10
+ String Length: 400
+ Container Type: dict
+ ----------------------------------------------- 
+ Min execution time: 0.014732 seconds
+ Avg execution time: 0.017525 seconds
+ Max execution time: 0.019509 seconds
+ ----------------------------------------------- 
+krishatcher@Speedy comparison % poetry run comparison --size 25000 --maximum 400 --container-type set
+ =============================================== 
+ =              Benchmark Results              = 
+ =============================================== 
+ Number of Benchmarks: 3
+ Number of Runs per Benchmark: 10
+ String Length: 400
+ Container Type: set
+ ----------------------------------------------- 
+ Min execution time: 0.008965 seconds
+ Avg execution time: 0.009877 seconds
+ Max execution time: 0.011552 seconds
+ ----------------------------------------------- 
+krishatcher@Speedy comparison % poetry run comparison --size 25000 --maximum 400 --container-type list
+ =============================================== 
+ =              Benchmark Results              = 
+ =============================================== 
+ Number of Benchmarks: 3
+ Number of Runs per Benchmark: 10
+ String Length: 400
+ Container Type: list
+ ----------------------------------------------- 
+ Min execution time: 0.005139 seconds
+ Avg execution time: 0.005639 seconds
+ Max execution time: 0.006630 seconds
+ ----------------------------------------------- 
+krishatcher@Speedy comparison % poetry run comparison --size 25000 --maximum 400 --container-type dict
+ =============================================== 
+ =              Benchmark Results              = 
+ =============================================== 
+ Number of Benchmarks: 3
+ Number of Runs per Benchmark: 10
+ String Length: 400
+ Container Type: dict
+ ----------------------------------------------- 
+ Min execution time: 0.005534 seconds
+ Avg execution time: 0.006304 seconds
+ Max execution time: 0.007326 seconds
+ ----------------------------------------------- 
+krishatcher@Speedy comparison % cd ~/Git/CS202/project-1-krishatcher/systemsense
+krishatcher@Speedy systemsense % poetry run systemsense completeinfo
+✨ Displaying System Information
+
+╭───────────────────────────────────────── System Information ─────────────────────────────────────────╮
+│ ╭──────────────────┬───────────────────────────────────────────────────────────────────╮             │
+│ │ System Parameter │ Parameter Value                                                   │             │
+│ ├──────────────────┼───────────────────────────────────────────────────────────────────┤             │
+│ │ battery          │ 100.00% battery life remaining, unknown seconds remaining         │             │
+│ │ cpu              │ x86_64 (i386)                                                     │             │
+│ │ cpucores         │ 8 cores (16 logical)                                              │             │
+│ │ cpufrequencies   │ Min: 2300 Mhz, Max: 2300 Mhz                                      │             │
+│ │ datetime         │ 2025-02-17 11:30:50.640815                                        │             │
+│ │ disk             │ Using 10.39 GB of 931.55 GB                                       │             │
+│ │ hostname         │ Speedy.local                                                      │             │
+│ │ memory           │ Using 5.88 GB of 16.00 GB                                         │             │
+│ │ platform         │ posix - Darwin (24.3.0)                                           │             │
+│ │ pythonversion    │ 3.12.8 (main, Dec  3 2024, 18:42:41) [Clang 19.1.5 ]              │             │
+│ │ runningprocesses │ 706 running processes                                             │             │
+│ │ swap             │ Using 0.97 GB of 2.00 GB                                          │             │
+│ │ system           │ macOS                                                             │             │
+│ │ systemload       │ ['8.29% over 1 min', '13.74% over 5 mins', '17.38% over 15 mins'] │             │
+│ │ virtualenv       │ You are in a virtual environment.                                 │             │
+│ ╰──────────────────┴───────────────────────────────────────────────────────────────────╯             │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+🏁 Displaying Benchmark Results
+
+╭─────────────────────────────────────── Benchmark Information ────────────────────────────────────────╮
+│ ╭────────────────┬───────────────────────────────────────────────────────────────╮                   │
+│ │ Benchmark Name │ Benchmark Results (sec)                                       │                   │
+│ ├────────────────┼───────────────────────────────────────────────────────────────┤                   │
+│ │ addition       │ [0.7307123219943605, 0.7331657360191457, 0.7249709790339693]  │                   │
+│ │ concatenation  │ [3.772549026994966, 3.8055982179939747, 3.760210898006335]    │                   │
+│ │ exponentiation │ [3.8879393730312586, 3.8323163370369002, 3.8534073819755577]  │                   │
+│ │ multiplication │ [0.5613520619808696, 0.567896579974331, 0.5750861720298417]   │                   │
+│ │ rangelist      │ [0.1868977400008589, 0.17921063699759543, 0.1826099749887362] │                   │
+│ ╰────────────────┴───────────────────────────────────────────────────────────────╯                   │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────╯
+krishatcher@Speedy systemsense % 
